@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@300;400;500;600;700&display=swap');
+
+/* ==================== REGLES GLOBALES ==================== */
+
+#map {
+  width: 800px;
+  height: 200px;
+}
+
+
+/* ==================== FLEXISTAN ==================== */
+
+.flex-x {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* ==================== POLICES ==================== */
+
+
+.font-fantasy {
+  font-family: 'Gluten', serif;
+}
+
+/* ==================== BLOCS/CONTAINERS ==================== */
+
+.justify {
+  justify-content: space-between;
+}
+
+.popup {
+  max-width: 800px;
+  color: white;
+  background-color: coral;
+}
+
+.resto-pic {
+  max-width: 250px;
+}
+
+.resto-pic__img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.resto-desc {
+  max-width: 500px;
+}
+
+.resto-buttons {
+  height: 80px;
+  max-width: 250px;
+}
+
+/* ==================== ELEMENTS ==================== */
+
+
+
+
+/* ==================== debug ==================== */
+
+.bsd {
+  border: 1px solid red;
+}
