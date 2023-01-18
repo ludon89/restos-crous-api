@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!------------------------------Font Awesome------------------------------>
+  <script src="https://kit.fontawesome.com/12d2b86f39.js" crossorigin="anonymous"></script>
+
   <!------------------------------CSS------------------------------>
   <link rel="stylesheet" href="assets/css/modern-normalize.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -20,30 +23,47 @@
 
 <body>
   <header>
-    <p class="font-fantasy">coucou</p>
+    <p class="font-fantasy">coucou <i class="fa-solid fa-star"></i></p>
   </header>
 
   <main>
-    <section>
+    <section> <!-- carte -->
       <div id="map">
       </div>
     </section>
 
-    <section>
-      <div class="popup flex-x justify">
-        <div class="resto-pic">
-          <img src="assets/img/placeholder.jpg" alt="photo restaurant" class="resto-pic__img">
+    <section class="popup flex-x justify"> <!-- popup -->
+      <div class="resto-pic">
+        <img src="assets/img/placeholder.jpg" alt="photo restaurant" class="resto-pic__img">
+      </div>
+      <div class="resto-desc font-fantasy">
+        <h2>Lorem ipsum</h2>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nam ab labore amet dicta officiis culpa,
+          esse soluta dolorem, ipsum voluptatibus molestias ea tempora, assumenda inventore voluptas ipsa corrupti.
+          Eveniet.</p>
+      </div>
+      <div class="resto-buttons flex-x">
+        <button class="resto-buttons__btn-save">Enregistrer</button>
+        <button class="resto-buttons__btn-close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </section>
+
+    <section class="mapfav flex-x"> <!-- liens -->
+      <div class="maplink flex-x flex-center-x">
+        <div class="maplink__icon flex-x">
+          <p><i class="fa-solid fa-map-location-dot"></i></p>
         </div>
-        <div class="resto-desc font-fantasy">
-          <h2>Lorem ipsum</h2>
-          <p>Lorem ipsum</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nam ab labore amet dicta officiis culpa,
-            esse soluta dolorem, ipsum voluptatibus molestias ea tempora, assumenda inventore voluptas ipsa corrupti.
-            Eveniet.</p>
+        <div class="maplink__text flex-x">
+          <h2 class="font-fantasy">Carte</h2>
         </div>
-        <div class="resto-buttons flex-x">
-          <button class="resto-buttons__btn-save">Enregistrer</button>
-          <button class="resto-buttons__btn-close">X</button>
+      </div>
+      <div class="favlink flex-x flex-center-x">
+        <div class="favlink__icon flex-x">
+          <p><i class="fa-solid fa-heart"></i></p>
+        </div>
+        <div class="favlink__text flex-x">
+          <h2 class="font-fantasy">Favoris</h2>
         </div>
       </div>
     </section>

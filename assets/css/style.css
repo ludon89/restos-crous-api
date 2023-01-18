@@ -3,10 +3,22 @@
 /* ==================== REGLES GLOBALES ==================== */
 
 #map {
-  width: 800px;
-  height: 200px;
+  max-width: 800px;
+  height: 450px;
 }
 
+i {
+  font-size: 2rem;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
 
 /* ==================== FLEXISTAN ==================== */
 
@@ -15,47 +27,94 @@
   flex-direction: row;
 }
 
+.flex-center-x {
+  justify-content: center;
+}
+
+.flex-y {
+  display: flex;
+  flex-direction: center;
+}
+
+.flex-center-y {
+  align-items: center;
+}
+
+
+
 
 /* ==================== POLICES ==================== */
-
 
 .font-fantasy {
   font-family: 'Gluten', serif;
 }
 
-/* ==================== BLOCS/CONTAINERS ==================== */
 
-.justify {
-  justify-content: space-between;
-}
+
+
+/* ==================== BLOCS/CONTAINERS ==================== */
 
 .popup {
   max-width: 800px;
   color: white;
   background-color: coral;
+  justify-content: space-between;
 }
 
 .resto-pic {
-  max-width: 250px;
+  flex-grow: 1;
+  margin: 0.5rem;
 }
 
 .resto-pic__img {
-  max-width: 100%;
+  max-width: 200px;
   height: auto;
   object-fit: contain;
 }
 
 .resto-desc {
-  max-width: 500px;
+  flex-grow: 2;
+
 }
 
 .resto-buttons {
-  height: 80px;
-  max-width: 250px;
+  flex-grow: 1;
+  height: 60px;
+  margin: 0.5rem;
 }
+
+.mapfav {
+  max-width: 800px;
+  color: coral;
+}
+
+.maplink {
+  width: 100%;
+}
+
+.favlink {
+  width: 100%
+}
+
+
+
 
 /* ==================== ELEMENTS ==================== */
 
+.resto-buttons__btn-save {
+  /* background-color: #ffdacc; */
+  background-color: white;
+  color: #992900;
+  border: none;
+  font-family: 'Gluten', serif;
+  border-radius: 10px;
+}
+
+.resto-buttons__btn-close {
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+}
 
 
 
