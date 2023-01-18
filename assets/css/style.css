@@ -20,6 +20,9 @@ i {
   display: block;
 }
 
+
+
+
 /* ==================== FLEXISTAN ==================== */
 
 .flex-x {
@@ -58,29 +61,33 @@ i {
   max-width: 800px;
   color: white;
   background-color: coral;
-  justify-content: space-between;
+  display: none;
 }
 
 .resto-pic {
-  flex-grow: 1;
+  width: 200px;
   margin: 0.5rem;
 }
 
 .resto-pic__img {
-  max-width: 200px;
-  height: auto;
+  width: 200px;
+  object-fit: contain;
+}
+
+.resto-pic__placeholder {
+  width: 50px;
   object-fit: contain;
 }
 
 .resto-desc {
-  flex-grow: 2;
-
+  width: 400px;
 }
 
 .resto-buttons {
-  flex-grow: 1;
   height: 60px;
+  width: 200px;
   margin: 0.5rem;
+  justify-content: space-between;
 }
 
 .mapfav {
@@ -102,7 +109,6 @@ i {
 /* ==================== ELEMENTS ==================== */
 
 .resto-buttons__btn-save {
-  /* background-color: #ffdacc; */
   background-color: white;
   color: #992900;
   border: none;
@@ -112,6 +118,7 @@ i {
 
 .resto-buttons__btn-close {
   background-color: transparent;
+  color: #992900;
   border: none;
   padding: 1rem;
 }
