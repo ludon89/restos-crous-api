@@ -75,8 +75,8 @@ fetch(url)
 
     // Boucle pour lire toutes les infos resto, mettre les marqueurs, remplir le HTML correspondant au clic...
     for (let item of restos) {
-      let markerResto = L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map);
-      markerResto.on("click", () => getRestoInfo(item)); // Mettre la fonction pour affecter l'affichage au clic ici
+      let marker = L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map);
+      marker.on("click", () => getRestoInfo(item)); // Mettre la fonction pour affecter l'affichage au clic ici
     }
 
     function getRestoInfo (item) { // TODO erreur si undefined
@@ -86,7 +86,7 @@ fetch(url)
       restoInfoShortDesc.innerHTML = item.fields.short_desc;
     }
 
-    function saveFav () {
+    function saveFav () { // ? lire directement les données plutôt que le innerHTML
       localStorage.setItem("restoInfoTitle", restoInfoTitle.innerHTML);
       console.log(localStorage);
     }

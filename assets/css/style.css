@@ -2,9 +2,19 @@
 
 /* ==================== REGLES GLOBALES ==================== */
 
-#map {
+body {
   max-width: 800px;
+  margin: auto;
+}
+
+.resetmargin {
+  margin: 0;
+}
+
+#map {
+  width: 800px;
   height: 450px;
+  border: 1px solid coral;
 }
 
 i {
@@ -12,6 +22,9 @@ i {
   margin: 0 0.5rem 0 0.5rem;
 }
 
+header {
+  color: coral;
+}
 
 
 
@@ -50,7 +63,6 @@ i {
 /* ==================== BLOCS/CONTAINERS ==================== */
 
 .popup {
-  max-width: 800px;
   color: white;
   background-color: coral;
 }
@@ -82,16 +94,13 @@ i {
 }
 
 .mapfav {
-  max-width: 800px;
   color: coral;
 }
 
-.maplink {
-  width: 100%;
-}
-
+.maplink,
 .favlink {
-  width: 100%
+  width: 100%;
+  border: 1px solid coral;
 }
 
 .hidden {
@@ -104,7 +113,7 @@ i {
 /* ==================== ELEMENTS ==================== */
 
 .resto-buttons__btn-save {
-  background-color: white;
+  background-color: #ffd7cc;
   color: #55220A;
   border: none;
   font-family: 'Gluten', serif;
@@ -114,7 +123,7 @@ i {
 .resto-buttons__btn-close {
   background-color: transparent;
   color: #55220A;
-  border: none;
+  border: solid;
   padding: 1rem;
 }
 
