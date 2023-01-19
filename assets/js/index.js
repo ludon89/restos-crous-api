@@ -44,6 +44,9 @@ fetch(url)
     const restoInfoTitle = document.querySelector(".resto-info__title");
     const restoInfoAddress = document.querySelector(".resto-info__address");
     const restoInfoShortDesc = document.querySelector(".resto-info__short_desc");
+    restoInfoTitle.innerHTML = "";
+    restoInfoAddress.innerHTML = "";
+    restoInfoShortDesc.innerHTML = "";
 
     const restoButtonsBtnSave = document.querySelector(".resto-buttons__btn-save");
     const restoButtonsBtnClose = document.querySelector(".resto-buttons__btn-close");
@@ -53,6 +56,10 @@ fetch(url)
 
 
     /* ==================== DECLARATION DES ECOUTEURS D'EVENEMENTS ==================== */
+
+    restoButtonsBtnSave.addEventListener("click", () => {
+      saveFav();
+    });
 
     restoButtonsBtnClose.addEventListener("click", () => {
       closePopup();
@@ -73,11 +80,15 @@ fetch(url)
     }
 
     function getRestoInfo (item) { // TODO erreur si undefined
-      console.log("test");
       popup.classList.remove("hidden");
       restoInfoTitle.innerHTML = item.fields.title;
       restoInfoAddress.innerHTML = item.fields.contact;
       restoInfoShortDesc.innerHTML = item.fields.short_desc;
+    }
+
+    function saveFav () {
+      localStorage.setItem("restoInfoTitle", restoInfoTitle.innerHTML);
+      console.log(localStorage);
     }
 
     function closePopup () {
@@ -92,21 +103,6 @@ fetch(url)
     function debugDisplayPopup () {
       popup.classList.remove("hidden");
     }
-
-    // Test renseignement des infos resto dans le HTML du popup (resto 0)
-    restoInfoAddress.innerHTML = restos[0].fields.contact;
-    restoInfoShortDesc.innerHTML = restos[0].fields.short_desc;
-
-
-
-
-
-
-
-
-
-
-
 
   })
   .catch((err) => console.log("Erreur de type :" + err));
