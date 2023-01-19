@@ -12,14 +12,6 @@ i {
   margin: 0 0.5rem 0 0.5rem;
 }
 
-.hidden {
-  display: none;
-}
-
-.active {
-  display: block;
-}
-
 
 
 
@@ -61,7 +53,6 @@ i {
   max-width: 800px;
   color: white;
   background-color: coral;
-  display: none;
 }
 
 .resto-pic {
@@ -79,7 +70,7 @@ i {
   object-fit: contain;
 }
 
-.resto-desc {
+.resto-info {
   width: 400px;
 }
 
@@ -103,6 +94,10 @@ i {
   width: 100%
 }
 
+.hidden {
+  display: none;
+}
+
 
 
 
@@ -122,6 +117,7 @@ i {
   border: none;
   padding: 1rem;
 }
+
 
 
 

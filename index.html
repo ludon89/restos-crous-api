@@ -23,7 +23,7 @@
 
 <body>
   <header>
-    <p class="font-fantasy">coucou <i class="fa-solid fa-star"></i></p>
+    <p class="font-fantasy">coucou <i class="fa-solid fa-star"></i><button id="debugBtn">debug</button></p>
   </header>
 
   <main>
@@ -32,16 +32,14 @@
       </div>
     </section>
 
-    <section class="popup flex-x justify"> <!-- popup -->
+    <section class="popup flex-x hidden"> <!-- popup -->
       <div class="resto-pic flex-x flex-center-x flex-center-y">
         <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="resto-pic__placeholder">
       </div>
-      <div class="resto-desc font-fantasy">
-        <h2>Lorem ipsum</h2>
-        <p>Lorem ipsum</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nam ab labore amet dicta officiis culpa,
-          esse soluta dolorem, ipsum voluptatibus molestias ea tempora, assumenda inventore voluptas ipsa corrupti.
-          Eveniet.</p>
+      <div class="resto-info font-fantasy">
+        <h2 class="resto-info__title"></h2>
+        <p class="resto-info__address"></p>
+        <p class="resto-info__short_desc"></p>
       </div>
       <div class="resto-buttons flex-x">
         <button class="resto-buttons__btn-save">Enregistrer</button>

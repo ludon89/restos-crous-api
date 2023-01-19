@@ -24,7 +24,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 
-
 /* ==================== REQUETE AJAX ==================== */
 
 const url = "https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=ensemble-des-lieux-de-restauration-des-crous&q=&rows=20&facet=type&facet=zone";
@@ -36,16 +35,78 @@ fetch(url)
     const restos = resp.records;
     console.log(restos);
 
-    // On fait une boucle pour lire les infos du tableau
-    // for (let item of restos) {
-    //   console.log(item.geometry.coordinates);
-    // }
 
-    // Boucle pour lire toutes les coordonnées (et les noms des lieux) et mettre les marqueurs
+
+    /* ==================== DECLARATION DES VARIABLES ==================== */
+
+    const popup = document.querySelector(".popup");
+
+    const restoInfoTitle = document.querySelector(".resto-info__title");
+    const restoInfoAddress = document.querySelector(".resto-info__address");
+    const restoInfoShortDesc = document.querySelector(".resto-info__short_desc");
+
+    const restoButtonsBtnSave = document.querySelector(".resto-buttons__btn-save");
+    const restoButtonsBtnClose = document.querySelector(".resto-buttons__btn-close");
+
+    const debugBtn = document.getElementById("debugBtn");
+
+
+
+    /* ==================== DECLARATION DES ECOUTEURS D'EVENEMENTS ==================== */
+
+    restoButtonsBtnClose.addEventListener("click", () => {
+      closePopup();
+    });
+
+    debugBtn.addEventListener("click", () => {
+      debugDisplayPopup();
+    });
+
+
+
+    /* ==================== FONCTIONS/BOUCLES ==================== */
+
+    // Boucle pour lire toutes les infos resto, mettre les marqueurs, remplir le HTML correspondant au clic...
     for (let item of restos) {
-      let markerResto = L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map)
-        .bindPopup(item.fields.title);
+      let markerResto = L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map);
+      markerResto.on("click", () => getRestoInfo(item)); // Mettre la fonction pour affecter l'affichage au clic ici
     }
+
+    function getRestoInfo (item) { // TODO erreur si undefined
+      console.log("test");
+      popup.classList.remove("hidden");
+      restoInfoTitle.innerHTML = item.fields.title;
+      restoInfoAddress.innerHTML = item.fields.contact;
+      restoInfoShortDesc.innerHTML = item.fields.short_desc;
+    }
+
+    function closePopup () {
+      popup.classList.add("hidden");
+    }
+
+
+
+
+
+
+    function debugDisplayPopup () {
+      popup.classList.remove("hidden");
+    }
+
+    // Test renseignement des infos resto dans le HTML du popup (resto 0)
+    restoInfoAddress.innerHTML = restos[0].fields.contact;
+    restoInfoShortDesc.innerHTML = restos[0].fields.short_desc;
+
+
+
+
+
+
+
+
+
+
+
 
   })
   .catch((err) => console.log("Erreur de type :" + err));
