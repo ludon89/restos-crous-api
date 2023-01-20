@@ -13,7 +13,7 @@
 
 let mapCont = document.querySelector("#map");
 
-let map = L.map('map').setView([50.633, 3.064156], 12);
+let map = L.map('map').setView([50.664009, 3.112414], 11);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,

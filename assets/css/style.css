@@ -14,7 +14,6 @@ body {
 #map {
   width: 800px;
   height: 450px;
-  border: 1px solid coral;
 }
 
 i {
@@ -25,6 +24,7 @@ i {
 header {
   color: coral;
 }
+
 
 
 
@@ -72,16 +72,6 @@ header {
   margin: 0.5rem;
 }
 
-.resto-pic__img {
-  width: 200px;
-  object-fit: contain;
-}
-
-.resto-pic__placeholder {
-  width: 50px;
-  object-fit: contain;
-}
-
 .resto-info {
   width: 400px;
 }
@@ -93,14 +83,9 @@ header {
   justify-content: space-between;
 }
 
-.mapfav {
-  color: coral;
-}
-
 .maplink,
 .favlink {
   width: 100%;
-  border: 1px solid coral;
 }
 
 .hidden {
@@ -123,8 +108,31 @@ header {
 .resto-buttons__btn-close {
   background-color: transparent;
   color: #55220A;
-  border: solid;
+  border: none;
   padding: 1rem;
+}
+
+.resto-pic__img {
+  width: 200px;
+  object-fit: contain;
+}
+
+.resto-pic__placeholder {
+  width: 50px;
+  object-fit: contain;
+}
+
+
+
+
+/* ==================== MODIFICATEURS ==================== */
+
+.mapfav--active {
+  color: coral;
+}
+
+.mapfav--passive {
+  color: #ffd7cc;
 }
 
 
