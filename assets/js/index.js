@@ -65,9 +65,9 @@ fetch(url)
       closePopup();
     });
 
-    debugBtn.addEventListener("click", () => {
-      debugDisplayPopup();
-    });
+    // debugBtn.addEventListener("click", () => {
+    //   debugDisplayPopup();
+    // });
 
 
 
