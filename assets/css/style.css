@@ -2,27 +2,22 @@
 
 /* ==================== REGLES GLOBALES ==================== */
 
-body {
-  max-width: 820px;
-}
-
-.resetmargin {
-  margin: 0;
-}
-
-#map {
-  width: 100vw;
-  max-width: 820px;
-  height: 80vh;
+* {
+  max-width: 1000px;
 }
 
 i {
   margin: 0 0.5rem 0 0.5rem;
 }
 
-header {
-  color: coral;
-  height: 50px;
+#map {
+  width: 100vw;
+  max-width: 1000px;
+  height: calc(100vh - 60px);
+}
+
+.pos-relative {
+  position: relative;
 }
 
 
@@ -40,11 +35,15 @@ header {
 
 .flex-y {
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
 }
 
 .flex-center-y {
   align-items: center;
+}
+
+.flex-end-y {
+  justify-content: end;
 }
 
 
@@ -60,17 +59,36 @@ header {
 
 
 
-
-
 /* ==================== BLOCS/CONTAINERS ==================== */
+
+.header {
+  color: coral;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  height: auto;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  z-index: 9999;
+  display: inline-block;
+  text-align: right;
+}
 
 .popup {
   color: white;
   background-color: coral;
+  z-index: 9999;
+  position: absolute;
+  justify-content: space-around;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
 }
 
 .resto-pic {
   width: 200px;
+  height: auto;
+  object-fit: contain;
   margin: 0.5rem;
 }
 
@@ -86,6 +104,7 @@ header {
 }
 
 .mapfav {
+  background-color: white;
   height: 60px;
 }
 

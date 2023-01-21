@@ -20,8 +20,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-// let marker = L.marker([50.631389, 3.058319]).addTo(map);
-
 
 
 /* ==================== REQUETE AJAX ==================== */

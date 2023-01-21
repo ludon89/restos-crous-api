@@ -22,30 +22,31 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="font-fantasy resetmargin">Carte des restaurants CROUS de Lille</h1>
+  <header class="pos-relative">
+    <h1 class="font-fantasy header">Carte des restaurants CROUS de Lille</h1>
   </header>
 
   <main>
-    <!-- carte -->
-    <section>
-      <div id="map">
-      </div>
-    </section>
 
-    <!-- popup -->
-    <section class="popup flex-x hidden">
-      <div class="resto-pic flex-x flex-center-x flex-center-y">
-        <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="resto-pic__placeholder">
+    <!-- carte & popup -->
+    <section class="pos-relative">
+      <!-- carte -->
+      <div id="map" class="map">
       </div>
-      <div class="resto-info font-fantasy">
-        <h2 class="resto-info__title"></h2>
-        <p class="resto-info__address"></p>
-        <p class="resto-info__short_desc"></p>
-      </div>
-      <div class="resto-buttons font-fantasy flex-x">
-        <button class="resto-buttons__btn-save">Enregistrer</button>
-        <button class="resto-buttons__btn-close"><i class="fa-solid fa-xmark fa-2xl"></i></button>
+      <!-- popup -->
+      <div id="popup" class="popup flex-x hidden">
+        <div class="resto-pic flex-x flex-center-x flex-center-y">
+          <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="resto-pic__placeholder">
+        </div>
+        <div class="resto-info font-fantasy">
+          <h2 class="resto-info__title"></h2>
+          <p class="resto-info__address"></p>
+          <p class="resto-info__short_desc"></p>
+        </div>
+        <div class="resto-buttons font-fantasy flex-x">
+          <button class="resto-buttons__btn-save">Enregistrer</button>
+          <button class="resto-buttons__btn-close"><i class="fa-solid fa-xmark fa-2xl"></i></button>
+        </div>
       </div>
     </section>
 
@@ -58,6 +59,7 @@
         <h2 class="font-fantasy"><i class="fa-solid fa-heart fa-xl"></i>Favoris</h2>
       </div>
     </section>
+
   </main>
 
 
