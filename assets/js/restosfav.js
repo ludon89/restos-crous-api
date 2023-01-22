@@ -18,38 +18,45 @@ const restoFavAddress = localStorage.getItem("restoFavAddress");
 const restoFavShortDesc = localStorage.getItem("restoFavShortDesc");
 console.log(restoFavTitle, restoFavAddress, restoFavShortDesc);
 
-const restoButtonsBtnDelete = document.querySelector(".resto-buttons__btn-delete");
-
 
 
 /* ==================== DECLARATION DES ECOUTEURS D'EVENEMENTS ==================== */
 
 window.onload = () => { displayFav(); };
 
-restoButtonsBtnDelete.addEventListener("click", (e) => {
-  clearAll(e);
-});
-
 
 
 /* ==================== FONCTIONS/BOUCLES ==================== */
 
 function displayFav () {
-  restosFavCont.innerHTML += `
-    <div class="restosfav_item flex-x">
-      <div class="restofav-pic flex-x flex-center-x flex-center-y">
-        <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="restofav-pic__placeholder">
+  if (localStorage.length !== 0) {
+    console.log("not empty");
+    restosFavCont.innerHTML += `
+      <div class="restosfav_popup flex-x">
+        <div class="restofav-pic-cont flex-x flex-center-x flex-center-y">
+          <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="restofav-pic-cont__placeholder">
+        </div>
+        <div class="restofav-info font-fantasy">
+          <h2 class="restofav-info__title">${restoFavTitle}</h2>
+          <p class="restofav-info__address">${restoFavAddress}</p>
+          <p class="restofav-info__short_desc">${restoFavShortDesc}</p>
+        </div>
+        <div class="resto-buttons font-fantasy flex-x">
+          <button class="resto-buttons__btn-delete">Retirer des favoris</button>
+        </div>
       </div>
-      <div class="restofav-display font-fantasy">
-        <h2 class="restofav-display__title">${restoFavTitle}</h2>
-        <p class="restofav-display__address">${restoFavAddress}</p>
-        <p class="restofav-display__short_desc">${restoFavShortDesc}</p>
+    `;
+    const restoButtonsBtnDelete = document.querySelector(".resto-buttons__btn-delete");
+    restoButtonsBtnDelete.addEventListener("click", (e) => {
+      clearAll(e);
+    });
+  } else {
+    restosFavCont.innerHTML += `
+      <div class="restosfav_placeholder">
+        <p>Vos favoris s'afficheront ici</p>
       </div>
-      <div class="resto-buttons font-fantasy flex-x">
-        <button class="resto-buttons__btn-delete">Retirer des favoris</button>
-      </div>
-    </div>
-  `;
+    `;
+  }
 }
 
 function clearAll () {

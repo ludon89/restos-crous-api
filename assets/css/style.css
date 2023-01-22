@@ -96,12 +96,26 @@ button:hover {
   text-align: center;
 }
 
-.restosfav_item {
+.restosfav_popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   background-color: coral;
   justify-content: space-around;
   width: 100vw;
-  padding-bottom: 1.5rem;
+  border: 2px solid #55220A;
+  border-radius: 10px;
+}
+
+.restosfav_placeholder {
+  font-family: 'Gluten', serif;
+  color: white;
+  background-color: coral;
+  text-align: center;
+  width: 100vw;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   border: 2px solid #55220A;
   border-radius: 10px;
 }
@@ -117,8 +131,8 @@ button:hover {
   width: 100vw;
 }
 
-.resto-pic,
-.restofav-pic {
+.resto-pic-cont,
+.restofav-pic-cont {
   width: 200px;
   height: auto;
   object-fit: contain;
@@ -127,14 +141,8 @@ button:hover {
   border-radius: 10px;
 }
 
-.resto-pic__placeholder,
-.restofav-pic__placeholder {
-  width: 50px;
-  object-fit: contain;
-}
-
 .resto-info,
-.restofav-display {
+.restofav-info {
   width: 400px;
 }
 
@@ -183,6 +191,12 @@ button:hover {
 
 
 /* ==================== MODIFICATEURS ==================== */
+
+.resto-pic-cont__placeholder,
+.restofav-pic-cont__placeholder {
+  width: 50px;
+  object-fit: contain;
+}
 
 .mapfav--active {
   color: coral;
