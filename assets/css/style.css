@@ -96,10 +96,19 @@ button:hover {
   text-align: center;
 }
 
+.popup {
+  color: white;
+  background-color: rgba(255, 127, 80, 0.8);
+  z-index: 9999;
+  position: absolute;
+  justify-content: space-around;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+}
+
 .restosfav_popup {
   display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   background-color: coral;
   justify-content: space-around;
@@ -120,21 +129,10 @@ button:hover {
   border-radius: 10px;
 }
 
-.popup {
-  color: white;
-  background-color: coral;
-  z-index: 9999;
-  position: absolute;
-  justify-content: space-around;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-}
-
 .resto-pic-cont,
 .restofav-pic-cont {
   width: 200px;
-  height: auto;
+  height: 200px;
   object-fit: contain;
   margin: 0.5rem;
   border: 1px solid #55220A;
@@ -195,6 +193,7 @@ button:hover {
 .resto-pic-cont__placeholder,
 .restofav-pic-cont__placeholder {
   width: 50px;
+  height: auto;
   object-fit: contain;
 }
 
