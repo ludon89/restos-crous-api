@@ -23,52 +23,44 @@
 
 <body>
   <header>
-    <h1 class="font-fantasy resetmargin">Vos favoris</h1>
+    <h1 class="font-fantasy restosfav_header">Vos favoris</h1>
   </header>
 
   <main>
 
     <!-- affichage des favoris -->
-    <section>
-      <div class="popup flex-x"> <!-- exemple -->
-        <div class="resto-pic flex-x flex-center-x flex-center-y">
-          <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="resto-pic__placeholder">
+
+    <section class="restosfav_cont">
+      <!-- exemple vide -->
+      <div class="restosfav_item flex-x">
+        <div class="restofav-pic flex-x flex-center-x flex-center-y">
+          <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="restofav-pic__placeholder">
         </div>
-        <div class="resto-info font-fantasy">
-          <h2 class="resto-info__title">Lorem ipsum</h2>
-          <p class="resto-info__address">Lorem ipsum</p>
-          <p class="resto-info__short_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-            inventore suscipit asperiores nemo animi a cupiditate iusto, obcaecati quisquam voluptatibus id voluptas qui
-            repudiandae laboriosam similique aspernatur dignissimos omnis tenetur?</p>
+        <div class="restofav-display font-fantasy">
+          <h2 class="restofav-display__title">Vos restaurants favoris s'afficheront ci-dessous</h2>
+          <p class="restofav-display__address"></p>
+          <p class="restofav-display__short_desc"></p>
         </div>
-        <div class="resto-buttons flex-x">
-          <button class="resto-buttons__btn-save">Retirer des favoris</button>
+        <div class="resto-buttons font-fantasy flex-x">
+          <button class="resto-buttons__btn-delete">Effacer les favoris</button>
         </div>
       </div>
     </section>
 
     <!-- liens -->
-    <section class="mapfav flex-x">
-      <div class="maplink flex-x flex-center-x">
-        <div class="maplink__icon flex-x">
-          <p><i class="fa-solid fa-map-location-dot"></i></p>
-        </div>
-        <div class="maplink__text flex-x">
-          <h2 class="font-fantasy">Carte</h2>
-        </div>
+    <section class="flex-x mapfav">
+      <div class="mapfav--passive maplink flex-x flex-center-x">
+        <a href="/index.html">
+          <h2 class="font-fantasy"><i class="fa-solid fa-map-location-dot fa-xl"></i>Carte</h2>
+        </a>
       </div>
-      <div class="favlink flex-x flex-center-x">
-        <div class="favlink__icon flex-x">
-          <p><i class="fa-solid fa-heart"></i></p>
-        </div>
-        <div class="favlink__text flex-x">
-          <h2 class="font-fantasy">Favoris</h2>
-        </div>
+      <div class="mapfav--active favlink flex-x flex-center-x">
+        <h2 class="font-fantasy"><i class="fa-solid fa-heart fa-xl"></i>Favoris</h2>
       </div>
     </section>
 
   </main>
 
   <!------------------------------JS------------------------------>
-  <script src="assets/js/index.js"></script>
+  <script src="assets/js/restosfav.js"></script>
 </body>

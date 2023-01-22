@@ -49,7 +49,7 @@ fetch(url)
     const restoButtonsBtnSave = document.querySelector(".resto-buttons__btn-save");
     const restoButtonsBtnClose = document.querySelector(".resto-buttons__btn-close");
 
-    const debugBtn = document.getElementById("debugBtn");
+    // const debugBtn = document.getElementById("debugBtn");
 
 
 
@@ -74,19 +74,26 @@ fetch(url)
     // Boucle pour lire toutes les infos resto, mettre les marqueurs, remplir le HTML correspondant au clic...
     for (let item of restos) {
       let marker = L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map);
-      marker.on("click", () => getRestoInfo(item)); // Mettre la fonction pour affecter l'affichage au clic ici
+      marker.on("click", () => getRestoInfo(item)); // TODO bind.popup
     }
 
     function getRestoInfo (item) { // TODO erreur si undefined
       popup.classList.remove("hidden");
       restoInfoTitle.innerHTML = item.fields.title;
       restoInfoAddress.innerHTML = item.fields.contact;
-      restoInfoShortDesc.innerHTML = item.fields.short_desc;
+      if (item.fields.short_desc != null) {
+        restoInfoShortDesc.innerHTML = item.fields.short_desc;
+      } else { restoInfoShortDesc.innerHTML = "Champ non renseigné"; }
     }
 
     function saveFav () { // ? lire directement les données plutôt que le innerHTML
-      localStorage.setItem("restoInfoTitle", restoInfoTitle.innerHTML);
-      console.log(localStorage);
+      const restoFavTitle = restoInfoTitle.innerHTML;
+      const restoFavAddress = restoInfoAddress.innerHTML;
+      const restoFavShortDesc = restoInfoShortDesc.innerHTML;
+
+      localStorage.setItem("restoFavTitle", restoFavTitle);
+      localStorage.setItem("restoFavAddress", restoFavAddress);
+      localStorage.setItem("restoFavShortDesc", restoFavShortDesc);
     }
 
     function closePopup () {
@@ -98,10 +105,9 @@ fetch(url)
 
 
 
-    function debugDisplayPopup () {
-      popup.classList.remove("hidden");
-    }
-
+    // function debugDisplayPopup () {
+    //   popup.classList.remove("hidden");
+    // }
   })
   .catch((err) => console.log("Erreur de type :" + err));
 

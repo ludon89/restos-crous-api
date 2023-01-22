@@ -10,6 +10,20 @@ i {
   margin: 0 0.5rem 0 0.5rem;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:active {
+  color: coral;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 #map {
   width: 100vw;
   max-width: 1000px;
@@ -74,6 +88,24 @@ i {
   text-align: right;
 }
 
+.restosfav_header {
+  color: coral;
+  font-size: 2rem;
+  height: auto;
+  margin: 0 0 1.25rem 0;
+  text-align: center;
+}
+
+.restosfav_item {
+  color: white;
+  background-color: coral;
+  justify-content: space-around;
+  width: 100vw;
+  padding-bottom: 1.5rem;
+  border: 2px solid #55220A;
+  border-radius: 10px;
+}
+
 .popup {
   color: white;
   background-color: coral;
@@ -85,14 +117,24 @@ i {
   width: 100vw;
 }
 
-.resto-pic {
+.resto-pic,
+.restofav-pic {
   width: 200px;
   height: auto;
   object-fit: contain;
   margin: 0.5rem;
+  border: 1px solid #55220A;
+  border-radius: 10px;
 }
 
-.resto-info {
+.resto-pic__placeholder,
+.restofav-pic__placeholder {
+  width: 50px;
+  object-fit: contain;
+}
+
+.resto-info,
+.restofav-display {
   width: 400px;
 }
 
@@ -119,12 +161,14 @@ i {
 
 
 
+
 /* ==================== ELEMENTS ==================== */
 
-.resto-buttons__btn-save {
+.resto-buttons__btn-save,
+.resto-buttons__btn-delete {
   background-color: #ffd7cc;
   color: #55220A;
-  border: none;
+  border: 1px solid #55220A;
   border-radius: 10px;
 }
 
@@ -135,15 +179,6 @@ i {
   padding: 1rem;
 }
 
-.resto-pic__img {
-  width: 200px;
-  object-fit: contain;
-}
-
-.resto-pic__placeholder {
-  width: 50px;
-  object-fit: contain;
-}
 
 
 
