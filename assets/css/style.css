@@ -90,6 +90,12 @@ button:hover {
   text-align: right;
 }
 
+@media screen and (max-width: 700px) {
+  .header {
+    display: none;
+  }
+}
+
 .restosfav_header {
   color: coral;
   font-size: 2rem;
@@ -107,16 +113,25 @@ button:hover {
   bottom: 0;
   left: 0;
   width: 100vw;
+  column-gap: 1vw;
+}
+
+@media screen and (max-width: 700px) {
+  .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .restosfav_popup {
-  display: flex;
   color: white;
   background-color: coral;
   justify-content: space-around;
   width: 100vw;
   border: 2px solid #55220A;
   border-radius: 10px;
+  column-gap: 1vw;
 }
 
 .restosfav_placeholder {
@@ -133,17 +148,22 @@ button:hover {
 
 .resto-pic-cont,
 .restofav-pic-cont {
-  width: 200px;
+  max-width: 200px;
   height: 200px;
   object-fit: contain;
   margin: 0.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
   border: 1px solid #55220A;
   border-radius: 10px;
+  flex: 0 0 200px;
 }
 
 .resto-info,
 .restofav-info {
   width: 400px;
+  flex: 2 1 auto;
+  padding: 0.5rem;
 }
 
 .resto-buttons {
@@ -151,6 +171,7 @@ button:hover {
   width: 200px;
   margin: 0.5rem;
   justify-content: space-between;
+  flex: 0 0 200px;
 }
 
 .mapfav {
@@ -183,7 +204,7 @@ button:hover {
   background-color: transparent;
   color: #55220A;
   border: none;
-  padding: 1rem;
+  margin: 0.5rem;
 }
 
 
