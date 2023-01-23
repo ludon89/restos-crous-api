@@ -8,8 +8,7 @@
 
 
 
-
-/* ==================== DECLARATION DES VARIABLES ==================== */
+// ******************** DECLARATION DES VARIABLES ******************** //
 
 const restosFavCont = document.querySelector(".restosfav_cont");
 
@@ -20,17 +19,17 @@ console.log(restoFavTitle, restoFavAddress, restoFavShortDesc);
 
 
 
-/* ==================== DECLARATION DES ECOUTEURS D'EVENEMENTS ==================== */
+// ******************** DECLARATION DES ECOUTEURS D'EVENEMENTS ******************** //
 
 window.onload = () => { displayFav(); };
 
 
 
-/* ==================== FONCTIONS/BOUCLES ==================== */
+// ******************** FONCTIONS/BOUCLES ******************** //
 
 function displayFav () {
+  restosFavCont.innerHTML = "";
   if (localStorage.length !== 0) {
-    console.log("not empty");
     restosFavCont.innerHTML += `
       <div class="restosfav_popup flex-x">
         <div class="restofav-pic-cont flex-x flex-center-x flex-center-y">
@@ -46,10 +45,14 @@ function displayFav () {
         </div>
       </div>
     `;
+
     const restoButtonsBtnDelete = document.querySelector(".resto-buttons__btn-delete");
-    restoButtonsBtnDelete.addEventListener("click", (e) => {
-      clearAll(e);
+
+    restoButtonsBtnDelete.addEventListener("click", () => {
+      clearAllFav();
+      displayFav();
     });
+
   } else {
     restosFavCont.innerHTML += `
       <div class="restosfav_placeholder">
@@ -59,6 +62,7 @@ function displayFav () {
   }
 }
 
-function clearAll () {
+function clearAllFav () {
+  console.log("test clearAllFav");
   localStorage.clear();
 }

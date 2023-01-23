@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@300;400;500;600;700&display=swap');
 
-/* ==================== REGLES GLOBALES ==================== */
+/* ******************** REGLES GLOBALES ******************** */
 
 * {
   max-width: 1000px;
@@ -36,7 +36,7 @@ button:hover {
 
 
 
-/* ==================== FLEXISTAN ==================== */
+/* ******************** FLEXISTAN ******************** */
 
 .flex-x {
   display: flex;
@@ -62,7 +62,7 @@ button:hover {
 
 
 
-/* ==================== POLICES ==================== */
+/* ******************** POLICES ******************** */
 
 .font-fantasy {
   font-family: 'Gluten', serif;
@@ -75,7 +75,7 @@ button:hover {
 
 
 
-/* ==================== BLOCS/CONTAINERS ==================== */
+/* ******************** BLOCS/CONTAINERS ******************** */
 
 .header {
   color: coral;
@@ -134,7 +134,7 @@ button:hover {
 .resto-pic-cont,
 .restofav-pic-cont {
   width: 200px;
-  height: auto;
+  height: 200px;
   object-fit: contain;
   margin: 0.5rem;
   border: 1px solid #55220A;
@@ -169,8 +169,7 @@ button:hover {
 
 
 
-
-/* ==================== ELEMENTS ==================== */
+/* ******************** ELEMENTS ******************** */
 
 .resto-buttons__btn-save,
 .resto-buttons__btn-delete {
@@ -189,8 +188,7 @@ button:hover {
 
 
 
-
-/* ==================== MODIFICATEURS ==================== */
+/* ******************** MODIFICATEURS ******************** */
 
 .resto-pic-cont__placeholder,
 .restofav-pic-cont__placeholder {
@@ -209,7 +207,7 @@ button:hover {
 
 
 
-/* ==================== debug ==================== */
+/* ******************** debug ******************** */
 
 .bsd {
   border: 1px solid red;

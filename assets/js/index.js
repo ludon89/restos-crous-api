@@ -9,7 +9,7 @@
 
 
 
-/* ==================== AJOUT DE LA CARTE ==================== */
+// ******************** AJOUT DE LA CARTE ******************** //
 
 let mapCont = document.querySelector("#map");
 
@@ -22,7 +22,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 
-/* ==================== REQUETE AJAX ==================== */
+// ******************** REQUETE AJAX ******************** //
 
 const url = "https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=ensemble-des-lieux-de-restauration-des-crous&q=&rows=20&facet=type&facet=zone";
 
@@ -35,7 +35,7 @@ fetch(url)
 
 
 
-    /* ==================== DECLARATION DES VARIABLES ==================== */
+    // ******************** DECLARATION DES VARIABLES ******************** //
 
     const popup = document.querySelector(".popup");
 
@@ -53,7 +53,7 @@ fetch(url)
 
 
 
-    /* ==================== DECLARATION DES ECOUTEURS D'EVENEMENTS ==================== */
+    // ******************** DECLARATION DES ECOUTEURS D'EVENEMENTS ******************** //
 
     restoButtonsBtnSave.addEventListener("click", () => {
       saveFav();
@@ -69,7 +69,7 @@ fetch(url)
 
 
 
-    /* ==================== FONCTIONS/BOUCLES ==================== */
+    // ******************** FONCTIONS/BOUCLES ******************** //
 
     // Boucle pour lire toutes les infos resto, mettre les marqueurs, remplir le HTML correspondant au clic...
     for (let item of restos) {
@@ -101,16 +101,5 @@ fetch(url)
       popup.classList.add("hidden");
     }
 
-
-
-
-
-
-    // function debugDisplayPopup () {
-    //   popup.classList.remove("hidden");
-    // }
   })
   .catch((err) => console.log("Erreur de type :" + err));
-
-
-
