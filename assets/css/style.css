@@ -73,6 +73,8 @@ button:hover {
 
 
 
+
+
 /* ==================== BLOCS/CONTAINERS ==================== */
 
 .header {
@@ -132,7 +134,7 @@ button:hover {
 .resto-pic-cont,
 .restofav-pic-cont {
   width: 200px;
-  height: 200px;
+  height: auto;
   object-fit: contain;
   margin: 0.5rem;
   border: 1px solid #55220A;

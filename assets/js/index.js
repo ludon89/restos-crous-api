@@ -74,10 +74,11 @@ fetch(url)
     // Boucle pour lire toutes les infos resto, mettre les marqueurs, remplir le HTML correspondant au clic...
     for (let item of restos) {
       let marker = L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map);
+      // .bindPopup(item.fields.title);
       marker.on("click", () => getRestoInfo(item)); // TODO bind.popup
     }
 
-    function getRestoInfo (item) { // TODO erreur si undefined
+    function getRestoInfo (item) {
       popup.classList.remove("hidden");
       restoInfoTitle.innerHTML = item.fields.title;
       restoInfoAddress.innerHTML = item.fields.contact;
