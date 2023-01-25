@@ -99,13 +99,16 @@ fetch(url)
         "address": restoFavAddress,
         "shortDesc": restoFavShortDesc,
       };
-      // const favArray = [restoFavObj]; // J'aurai besoin d'un tableau pour stocker plusieurs favoris
+      const favArray = [JSON.stringify(restoFavObj)]; // J'aurai besoin d'un tableau pour stocker plusieurs favoris
+      console.log(favArray);
+
+      localStorage.setItem("favArray", favArray);
 
       // localStorage.setItem("restoFavTitle", restoFavTitle);
       // localStorage.setItem("restoFavAddress", restoFavAddress);
       // localStorage.setItem("restoFavShortDesc", restoFavShortDesc);
 
-      localStorage.setItem("favObj", JSON.stringify(restoFavObj));
+      // localStorage.setItem("favObj", JSON.stringify(restoFavObj));
       // localStorage.setItem("favArray", JSON.stringify(favArray)); // Je transforme le tableau en chaine de caractères
     }
 
