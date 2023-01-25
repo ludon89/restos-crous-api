@@ -103,3 +103,13 @@ fetch(url)
 
   })
   .catch((err) => console.log("Erreur de type :" + err));
+
+/**
+ * Mettre et récup plusieurs élements dans le Local Storage :
+ *
+ * 3 fonctions : save, get, add
+ *
+ * on utilise un tableau pour mettre plusieurs objets (autant qu'il nous en faut) :
+ * {nom : ... ; adresse : ... ; description : ...}
+ *
+ */
