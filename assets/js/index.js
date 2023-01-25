@@ -79,6 +79,8 @@ fetch(url)
     }
 
     function getRestoInfo (item) {
+      // console.log(item);
+      // console.log(restos);
       popup.classList.remove("hidden");
       restoInfoTitle.innerHTML = item.fields.title;
       restoInfoAddress.innerHTML = item.fields.contact;
@@ -87,14 +89,24 @@ fetch(url)
       } else { restoInfoShortDesc.innerHTML = "Champ non renseigné"; }
     }
 
-    function saveFav () { // ? lire directement les données plutôt que le innerHTML
+    function saveFav () {
       const restoFavTitle = restoInfoTitle.innerHTML;
       const restoFavAddress = restoInfoAddress.innerHTML;
       const restoFavShortDesc = restoInfoShortDesc.innerHTML;
 
-      localStorage.setItem("restoFavTitle", restoFavTitle);
-      localStorage.setItem("restoFavAddress", restoFavAddress);
-      localStorage.setItem("restoFavShortDesc", restoFavShortDesc);
+      const restoFavObj = { // Je mets les infos du resto que je veux mettre en fav dans un objet
+        "title": restoFavTitle,
+        "address": restoFavAddress,
+        "shortDesc": restoFavShortDesc,
+      };
+      // const favArray = [restoFavObj]; // J'aurai besoin d'un tableau pour stocker plusieurs favoris
+
+      // localStorage.setItem("restoFavTitle", restoFavTitle);
+      // localStorage.setItem("restoFavAddress", restoFavAddress);
+      // localStorage.setItem("restoFavShortDesc", restoFavShortDesc);
+
+      localStorage.setItem("favObj", JSON.stringify(restoFavObj));
+      // localStorage.setItem("favArray", JSON.stringify(favArray)); // Je transforme le tableau en chaine de caractères
     }
 
     function closePopup () {
@@ -104,6 +116,11 @@ fetch(url)
   })
   .catch((err) => console.log("Erreur de type :" + err));
 
+
+
+
+
+
 /**
  * Mettre et récup plusieurs élements dans le Local Storage :
  *
@@ -111,5 +128,14 @@ fetch(url)
  *
  * on utilise un tableau pour mettre plusieurs objets (autant qu'il nous en faut) :
  * {nom : ... ; adresse : ... ; description : ...}
+ *
+ * on envoie l'objet sous forme de chaine de caractères, mais on le parse quand on le récup
+ * (et après on pourra boucler dedans)
+ *
+ * function add(e){
+ *   let product = get();
+ *   product.push(e);
+ *   save(product); // fonction pour ajouter un favori dans le local storage
+ * }
  *
  */

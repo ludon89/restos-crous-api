@@ -12,10 +12,16 @@
 
 const restosFavCont = document.querySelector(".restosfav_cont");
 
-const restoFavTitle = localStorage.getItem("restoFavTitle");
-const restoFavAddress = localStorage.getItem("restoFavAddress");
-const restoFavShortDesc = localStorage.getItem("restoFavShortDesc");
-console.log(restoFavTitle, restoFavAddress, restoFavShortDesc);
+// const restoFavTitle = localStorage.getItem("restoFavTitle");
+// const restoFavAddress = localStorage.getItem("restoFavAddress");
+// const restoFavShortDesc = localStorage.getItem("restoFavShortDesc");
+// console.log(restoFavTitle, restoFavAddress, restoFavShortDesc);
+
+console.log(localStorage);
+let restoFavObj = localStorage.getItem("favObj");
+console.log(restoFavObj);
+restoFavObj = JSON.parse(restoFavObj);
+console.log(restoFavObj);
 
 
 
@@ -27,6 +33,7 @@ window.onload = () => { displayFav(); };
 
 // ******************** FONCTIONS/BOUCLES ******************** //
 
+
 function displayFav () {
   restosFavCont.innerHTML = "";
   if (localStorage.length !== 0) {
@@ -36,9 +43,9 @@ function displayFav () {
           <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="restofav-pic-cont__placeholder">
         </div>
         <div class="restofav-info font-fantasy">
-          <h2 class="restofav-info__title">${restoFavTitle}</h2>
-          <p class="restofav-info__address">${restoFavAddress}</p>
-          <p class="restofav-info__short_desc">${restoFavShortDesc}</p>
+          <h2 class="restofav-info__title">${restoFavObj.title}</h2>
+          <p class="restofav-info__address">${restoFavObj.address}</p>
+          <p class="restofav-info__short_desc">${restoFavObj.shortDesc}</p>
         </div>
         <div class="resto-buttons font-fantasy flex-x">
           <button class="resto-buttons__btn-delete">Retirer des favoris</button>
