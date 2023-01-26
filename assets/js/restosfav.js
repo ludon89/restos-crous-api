@@ -12,16 +12,10 @@
 
 const restosFavCont = document.querySelector(".restosfav_cont");
 
-// const restoFavTitle = localStorage.getItem("restoFavTitle");
-// const restoFavAddress = localStorage.getItem("restoFavAddress");
-// const restoFavShortDesc = localStorage.getItem("restoFavShortDesc");
-// console.log(restoFavTitle, restoFavAddress, restoFavShortDesc);
+const favArray = JSON.parse(localStorage.getItem("favArrayKey"));
+console.log(favArray);
 
-console.log(localStorage);
-let restoFavObj = localStorage.getItem("favObj");
-console.log(restoFavObj);
-restoFavObj = JSON.parse(restoFavObj);
-console.log(restoFavObj);
+const btnClearAllFav = document.querySelector(".clearallfav__btn");
 
 
 
@@ -29,47 +23,48 @@ console.log(restoFavObj);
 
 window.onload = () => { displayFav(); };
 
+btnClearAllFav.addEventListener("click", () => {
+  clearAllFav();
+  displayFav();
+});
+
 
 
 // ******************** FONCTIONS/BOUCLES ******************** //
 
-
 function displayFav () {
   restosFavCont.innerHTML = "";
-  if (localStorage.length !== 0) {
-    restosFavCont.innerHTML += `
-      <div class="restosfav_popup flex-x">
-        <div class="restofav-pic-cont flex-x flex-center-x flex-center-y">
-          <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="restofav-pic-cont__placeholder">
-        </div>
-        <div class="restofav-info font-fantasy">
-          <h2 class="restofav-info__title">${restoFavObj.title}</h2>
-          <p class="restofav-info__address">${restoFavObj.address}</p>
-          <p class="restofav-info__short_desc">${restoFavObj.shortDesc}</p>
-        </div>
-        <div class="resto-buttons font-fantasy flex-x">
-          <button class="resto-buttons__btn-delete">Retirer des favoris</button>
-        </div>
-      </div>
-    `;
 
-    const restoButtonsBtnDelete = document.querySelector(".resto-buttons__btn-delete");
-
-    restoButtonsBtnDelete.addEventListener("click", () => {
-      clearAllFav();
-      displayFav();
-    });
-
-  } else {
+  if (localStorage.length == 0) {
     restosFavCont.innerHTML += `
       <div class="restosfav_placeholder">
         <p>Vos favoris s'afficheront ici</p>
       </div>
     `;
+  } else {
+    for (let item of favArray) {
+      restosFavCont.innerHTML += `
+          <div class="restosfav_popup flex-x">
+            <div class="restofav-pic-cont flex-x flex-center-x flex-center-y">
+              <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="restofav-pic-cont__placeholder">
+            </div>
+            <div class="restofav-info font-fantasy">
+              <h2 class="restofav-info__title">${item.title}</h2>
+              <p class="restofav-info__address">${item.address}</p>
+              <p class="restofav-info__short_desc">${item.shortDesc}</p>
+            </div>
+            <div class="resto-buttons font-fantasy flex-x">
+              <button class="resto-buttons__btn-deletefav">Retirer des favoris</button>
+            </div>
+          </div>
+          `;
+
+    };
+
+
   }
 }
 
 function clearAllFav () {
-  console.log("test clearAllFav");
   localStorage.clear();
 }

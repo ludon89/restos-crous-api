@@ -211,6 +211,12 @@ button:hover {
   width: 100%;
 }
 
+.clearallfav {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+
 .hidden {
   display: none;
 }
@@ -228,7 +234,7 @@ button:hover {
   height: 60px;
 }
 
-.resto-buttons__btn-delete {
+.resto-buttons__btn-deletefav {
   background-color: #ffd7cc;
   color: #55220A;
   border: 1px solid #55220A;
@@ -238,7 +244,7 @@ button:hover {
   height: 60px;
 }
 @media screen and (max-width: 700px) {
-  .resto-buttons__btn-delete {
+  .resto-buttons__btn-deletefav {
     margin: auto;
   }
 }
@@ -251,6 +257,16 @@ button:hover {
   max-width: 50px;
   height: 60px;
   margin: 0 0 0 0.5rem;
+}
+
+.clearallfav__btn {
+  background-color: #ffd7cc;
+  color: #55220A;
+  border: 1px solid #55220A;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 200px;
+  height: 60px;
 }
 
 @media screen and (max-width: 540px) {

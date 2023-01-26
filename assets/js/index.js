@@ -49,8 +49,6 @@ fetch(url)
     const restoButtonsBtnSave = document.querySelector(".resto-buttons__btn-save");
     const restoButtonsBtnClose = document.querySelector(".resto-buttons__btn-close");
 
-    // const debugBtn = document.getElementById("debugBtn");
-
 
 
     // ******************** DECLARATION DES ECOUTEURS D'EVENEMENTS ******************** //
@@ -63,24 +61,18 @@ fetch(url)
       closePopup();
     });
 
-    // debugBtn.addEventListener("click", () => {
-    //   debugDisplayPopup();
-    // });
 
 
+    // ******************** FONCTIONS ******************** //
 
-    // ******************** FONCTIONS/BOUCLES ******************** //
-
-    // Boucle pour lire toutes les infos resto, mettre les marqueurs, remplir le HTML correspondant au clic...
+    // Boucle pour lire toutes les infos resto, mettre les marqueurs, remplir le HTML avec les infos resto...
     for (let item of restos) {
-      let marker = L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map);
-      // .bindPopup(item.fields.title);
-      marker.on("click", () => getRestoInfo(item)); // TODO bind.popup
+      let marker = L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map)
+        .bindPopup(item.fields.title);
+      marker.on("click", () => getRestoInfo(item));
     }
 
     function getRestoInfo (item) {
-      // console.log(item);
-      // console.log(restos);
       popup.classList.remove("hidden");
       restoInfoTitle.innerHTML = item.fields.title;
       restoInfoAddress.innerHTML = item.fields.contact;
@@ -88,6 +80,14 @@ fetch(url)
         restoInfoShortDesc.innerHTML = item.fields.short_desc;
       } else { restoInfoShortDesc.innerHTML = "Champ non renseigné"; }
     }
+
+    // function returnRestoInfo (item) {
+    //   return item.fields.title;
+    // }
+
+    // let currentRestoTitle = returnRestoInfo();
+    // console.log(currentRestoTitle);
+
 
     function saveFav () {
       const restoFavTitle = restoInfoTitle.innerHTML;
@@ -99,46 +99,22 @@ fetch(url)
         "address": restoFavAddress,
         "shortDesc": restoFavShortDesc,
       };
-      const favArray = [JSON.stringify(restoFavObj)]; // J'aurai besoin d'un tableau pour stocker plusieurs favoris
-      console.log(favArray);
 
-      localStorage.setItem("favArray", favArray);
+      if (localStorage.length == 0) {
+        const favArray = [restoFavObj]; // J'aurai besoin d'un tableau pour stocker plusieurs favoris
+        localStorage.setItem("favArrayKey", JSON.stringify(favArray));
+      } else {
+        const favArray = JSON.parse(localStorage.getItem("favArrayKey"));
+        favArray.push(restoFavObj);
+        const newFavArray = favArray;
+        console.log(newFavArray);
 
-      // localStorage.setItem("restoFavTitle", restoFavTitle);
-      // localStorage.setItem("restoFavAddress", restoFavAddress);
-      // localStorage.setItem("restoFavShortDesc", restoFavShortDesc);
-
-      // localStorage.setItem("favObj", JSON.stringify(restoFavObj));
-      // localStorage.setItem("favArray", JSON.stringify(favArray)); // Je transforme le tableau en chaine de caractères
+        localStorage.setItem("favArrayKey", JSON.stringify(newFavArray));
+      }
     }
 
     function closePopup () {
       popup.classList.add("hidden");
     }
-
   })
   .catch((err) => console.log("Erreur de type :" + err));
-
-
-
-
-
-
-/**
- * Mettre et récup plusieurs élements dans le Local Storage :
- *
- * 3 fonctions : save, get, add
- *
- * on utilise un tableau pour mettre plusieurs objets (autant qu'il nous en faut) :
- * {nom : ... ; adresse : ... ; description : ...}
- *
- * on envoie l'objet sous forme de chaine de caractères, mais on le parse quand on le récup
- * (et après on pourra boucler dedans)
- *
- * function add(e){
- *   let product = get();
- *   product.push(e);
- *   save(product); // fonction pour ajouter un favori dans le local storage
- * }
- *
- */
