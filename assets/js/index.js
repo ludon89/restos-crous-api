@@ -111,6 +111,7 @@ fetch(url)
 
         localStorage.setItem("favArrayKey", JSON.stringify(newFavArray));
       }
+      window.alert("Favori sauvegardé");
     }
 
     function closePopup () {

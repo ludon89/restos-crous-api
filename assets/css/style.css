@@ -108,7 +108,9 @@ button:hover {
 }
 
 .restosfav_cont {
-  height: calc(100vh - (60px + 100px));
+  height: calc(100vh - (60px + 1px + 1px + 60px + 100px));
+  border-top: solid 1px #55220A;
+  border-bottom: solid 1px #55220A;
   overflow-x: auto;
   overflow-y: auto;
 }
@@ -134,13 +136,14 @@ button:hover {
   }
 }
 
+/* https://stackoverflow.com/questions/33606565/is-it-possible-to-calculate-the-viewport-width-vw-without-scrollbar */
 .restosfav_popup {
   color: white;
   background-color: coral;
   justify-content: space-between;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  width: 100vw;
+  width: calc(100vw - (100vw - 100%));
   border: 2px solid #55220A;
   border-radius: 10px;
   column-gap: 1vw;
@@ -150,6 +153,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: calc(100vw - (100vw - 100%));
   }
 }
 
@@ -158,7 +162,7 @@ button:hover {
   color: white;
   background-color: coral;
   text-align: center;
-  width: 100vw;
+  width: calc(100vw - (100vw - 100%));
   padding-top: 3rem;
   padding-bottom: 3rem;
   border: 2px solid #55220A;
@@ -215,6 +219,7 @@ button:hover {
   height: 60px;
   display: flex;
   justify-content: center;
+  padding-top: 5px;
 }
 
 .hidden {

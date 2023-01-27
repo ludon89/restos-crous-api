@@ -28,45 +28,27 @@
 
   <main>
 
-    <!-- affichage des favoris -->
-
     <section class="restosfav_cont">
-
+      <!-- affichage des favoris -->
     </section>
 
-    <!-- test -->
-    <div class="restosfav_popup flex-x">
-      <div class="restofav-pic-cont flex-x flex-center-x flex-center-y">
-        <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="restofav-pic-cont__placeholder">
+    <section>
+      <div class="clearallfav">
+        <button class="font-fantasy clearallfav__btn">Effacer tous les favoris</button>
       </div>
-      <div class="restofav-info font-fantasy">
-        <h2 class="restofav-info__title">${restoFavObj[0].title}</h2>
-        <p class="restofav-info__address">${restoFavObj[0].address}</p>
-        <p class="restofav-info__short_desc">${restoFavObj[0].shortDesc}</p>
-      </div>
-      <div class="resto-buttons font-fantasy flex-x">
-        <button class="resto-buttons__btn-deletefav">Retirer des favoris</button>
-      </div>
-    </div>
-
-    <section class="clearallfav">
-      <button class="font-fantasy clearallfav__btn">Effacer tous les favoris</button>
-    </section>
-
-
-    <!-- liens -->
-    <section class="flex-x flex-center-y mapfav">
-      <div class="mapfav--passive maplink flex-x flex-center-x">
-        <a href="/index.html">
-          <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-map-location-dot fa-xl"></i>
-            <span class="mapfav__text">Carte</span>
+      <div class="flex-x flex-center-y mapfav">
+        <div class="mapfav--passive maplink flex-x flex-center-x">
+          <a href="/index.html">
+            <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-map-location-dot fa-xl"></i>
+              <span class="mapfav__text">Carte</span>
+            </h2>
+          </a>
+        </div>
+        <div class="mapfav--active favlink flex-x flex-center-x">
+          <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-heart fa-xl"></i>
+            <span class="mapfav__text">Favoris</span>
           </h2>
-        </a>
-      </div>
-      <div class="mapfav--active favlink flex-x flex-center-x">
-        <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-heart fa-xl"></i>
-          <span class="mapfav__text">Favoris</span>
-        </h2>
+        </div>
       </div>
     </section>
 
