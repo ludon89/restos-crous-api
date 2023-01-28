@@ -22,51 +22,49 @@
 </head>
 
 <body>
-  <header class="pos-relative">
-    <h1 class="font-fantasy header">Carte des restaurants CROUS de Lille</h1>
-  </header>
-
-  <main>
-
-    <!-- carte & popup -->
-    <section class="pos-relative">
-      <!-- carte -->
-      <div id="map" class="map">
-      </div>
-      <!-- popup -->
-      <div class="popup flex-x hidden">
-        <div class="resto-pic-cont flex-x flex-center-x flex-center-y">
-          <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="resto-pic-cont__placeholder">
+  <div class="center">
+    <header class="pos-relative">
+      <h1 class="font-fantasy header">Carte des restaurants CROUS de Lille</h1>
+    </header>
+    <main>
+      <!-- carte & popup -->
+      <section class="pos-relative">
+        <!-- carte -->
+        <div id="map" class="map">
         </div>
-        <div class="resto-info font-fantasy">
-          <h2 class="resto-info__title"></h2>
-          <p class="resto-info__address"></p>
-          <p class="resto-info__short_desc"></p>
+        <!-- popup -->
+        <div class="popup flex-x hidden">
+          <div class="resto-pic-cont flex-x flex-center-x flex-center-y">
+            <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="resto-pic-cont__placeholder">
+          </div>
+          <div class="resto-info font-fantasy">
+            <h2 class="resto-info__title"></h2>
+            <p class="resto-info__address"></p>
+            <p class="resto-info__short_desc"></p>
+          </div>
+          <div class="resto-buttons font-fantasy flex-x">
+            <button class="resto-buttons__btn-save">Ajouter aux favoris</button>
+            <button class="resto-buttons__btn-close"><i class="fa-solid fa-xmark fa-2xl"></i></button>
+          </div>
         </div>
-        <div class="resto-buttons font-fantasy flex-x">
-          <button class="resto-buttons__btn-save">Ajouter aux favori</button>
-          <button class="resto-buttons__btn-close"><i class="fa-solid fa-xmark fa-2xl"></i></button>
-        </div>
-      </div>
-    </section>
-
-    <!-- liens -->
-    <section class="flex-x flex-center-y mapfav">
-      <div class="mapfav--active maplink flex-x flex-center-x">
-        <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-map-location-dot fa-xl"></i>
-          <span class="mapfav__text">Carte</span>
-        </h2>
-      </div>
-      <div class="mapfav--passive favlink flex-x flex-center-x">
-        <a href="/restosfav.html">
-          <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-heart fa-xl"></i>
-            <span class="mapfav__text">Favoris</span>
+      </section>
+      <!-- liens -->
+      <section class="flex-x flex-center-y mapfav">
+        <div class="mapfav--active maplink flex-x flex-center-x">
+          <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-map-location-dot fa-xl"></i>
+            <span class="mapfav__text">Carte</span>
           </h2>
-        </a>
-      </div>
-    </section>
-
-  </main>
+        </div>
+        <div class="mapfav--passive favlink flex-x flex-center-x">
+          <a href="/restosfav.html">
+            <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-heart fa-xl"></i>
+              <span class="mapfav__text">Favoris</span>
+            </h2>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <!------------------------------JS------------------------------>
   <script src="assets/js/index.js"></script>

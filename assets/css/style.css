@@ -2,10 +2,6 @@
 
 /* ******************** REGLES GLOBALES ******************** */
 
-* {
-  max-width: 1000px;
-}
-
 i {
   margin: 0 0.5rem 0 0.5rem;
 }
@@ -28,6 +24,11 @@ button:hover {
   width: 100vw;
   max-width: 1000px;
   height: calc(100vh - 100px);
+}
+
+.center {
+  max-width: 1000px;
+  margin: auto;
 }
 
 .pos-relative {
@@ -87,6 +88,7 @@ button:hover {
   font-size: 1.5rem;
   height: auto;
   margin: 0;
+  padding: 0.25rem;
   position: absolute;
   right: 0;
   z-index: 9999;
@@ -105,11 +107,11 @@ button:hover {
   height: 60px;
   text-align: center;
   margin: 0;
+  padding: 0.25rem;
 }
 
 .restosfav_cont {
   height: calc(100vh - (60px + 1px + 1px + 60px + 100px));
-  border-top: solid 1px #55220A;
   border-bottom: solid 1px #55220A;
   overflow-x: auto;
   overflow-y: auto;
@@ -125,6 +127,7 @@ button:hover {
   left: 0;
   padding: 0.5rem;
   width: 100vw;
+  max-width: 1000px;
   max-height: calc(100vh - 100px);
   column-gap: 1vw;
 }
@@ -144,6 +147,7 @@ button:hover {
   margin-bottom: 1rem;
   padding: 0.5rem;
   width: calc(100vw - (100vw - 100%));
+  max-width: 1000px;
   border: 2px solid #55220A;
   border-radius: 10px;
   column-gap: 1vw;
@@ -178,6 +182,7 @@ button:hover {
   margin-bottom: auto;
   border: 1px solid #55220A;
   border-radius: 10px;
+  box-shadow: 1px 1px 1px #55220A;
 }
 
 .resto-info,
@@ -235,6 +240,7 @@ button:hover {
   color: #55220A;
   border: 1px solid #55220A;
   border-radius: 10px;
+  box-shadow: 1px 1px 1px #55220A;
   max-width: 150px;
   height: 60px;
 }
@@ -244,6 +250,7 @@ button:hover {
   color: #55220A;
   border: 1px solid #55220A;
   border-radius: 10px;
+  box-shadow: 1px 1px 1px #55220A;
   width: 100%;
   max-width: 200px;
   height: 60px;
@@ -269,6 +276,7 @@ button:hover {
   color: #55220A;
   border: 1px solid #55220A;
   border-radius: 10px;
+  box-shadow: 1px 1px 1px #55220A;
   width: 100%;
   max-width: 200px;
   height: 60px;

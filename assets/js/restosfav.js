@@ -44,27 +44,27 @@ function displayFav () {
   } else {
     for (let item of favArray) {
       restosFavCont.innerHTML += `
-          <div class="restosfav_popup flex-x">
-            <div class="restofav-pic-cont flex-x flex-center-x flex-center-y">
-              <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="restofav-pic-cont__placeholder">
-            </div>
-            <div class="restofav-info font-fantasy">
-              <h2 class="restofav-info__title">${item.title}</h2>
-              <p class="restofav-info__address">${item.address}</p>
-              <p class="restofav-info__short_desc">${item.shortDesc}</p>
-            </div>
-            <div class="resto-buttons font-fantasy flex-x">
-              <button class="resto-buttons__btn-deletefav">Retirer des favoris</button>
-            </div>
+        <div class="restosfav_popup flex-x">
+          <div class="restofav-pic-cont flex-x flex-center-x flex-center-y">
+            <img src="assets/img/camera-solid.svg" alt="photo restaurant" class="restofav-pic-cont__placeholder">
           </div>
-          `;
-
+          <div class="restofav-info font-fantasy">
+            <h2 class="restofav-info__title">${item.title}</h2>
+            <p class="restofav-info__address">${item.address}</p>
+            <p class="restofav-info__short_desc">${item.shortDesc}</p>
+          </div>
+          <div class="resto-buttons font-fantasy flex-x">
+            <button class="resto-buttons__btn-deletefav">Retirer des favoris</button>
+          </div>
+        </div>
+      `;
     };
-
-
   }
 }
 
 function clearAllFav () {
-  localStorage.clear();
+  let text = "Êtes-vous sûr de vouloir effacer tous les favoris ?";
+  if (confirm(text) == true) {
+    localStorage.clear();
+  }
 }

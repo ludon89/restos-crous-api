@@ -22,37 +22,35 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="font-fantasy restosfav_header">Vos favoris</h1>
-  </header>
-
-  <main>
-
-    <section class="restosfav_cont">
-      <!-- affichage des favoris -->
-    </section>
-
-    <section>
-      <div class="clearallfav">
-        <button class="font-fantasy clearallfav__btn">Effacer tous les favoris</button>
-      </div>
-      <div class="flex-x flex-center-y mapfav">
-        <div class="mapfav--passive maplink flex-x flex-center-x">
-          <a href="/index.html">
-            <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-map-location-dot fa-xl"></i>
-              <span class="mapfav__text">Carte</span>
+  <div class="center">
+    <header>
+      <h1 class="font-fantasy restosfav_header">Vos favoris</h1>
+    </header>
+    <main>
+      <section class="restosfav_cont">
+        <!-- affichage des favoris -->
+      </section>
+      <section>
+        <div class="clearallfav">
+          <button class="font-fantasy clearallfav__btn">Effacer tous les favoris</button>
+        </div>
+        <div class="flex-x flex-center-y mapfav">
+          <div class="mapfav--passive maplink flex-x flex-center-x">
+            <a href="/index.html">
+              <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-map-location-dot fa-xl"></i>
+                <span class="mapfav__text">Carte</span>
+              </h2>
+            </a>
+          </div>
+          <div class="mapfav--active favlink flex-x flex-center-x">
+            <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-heart fa-xl"></i>
+              <span class="mapfav__text">Favoris</span>
             </h2>
-          </a>
+          </div>
         </div>
-        <div class="mapfav--active favlink flex-x flex-center-x">
-          <h2 class="font-fantasy font-fantasy-mapfav"><i class="fa-solid fa-heart fa-xl"></i>
-            <span class="mapfav__text">Favoris</span>
-          </h2>
-        </div>
-      </div>
-    </section>
-
-  </main>
+      </section>
+    </main>
+  </div>
 
   <!------------------------------JS------------------------------>
   <script src="assets/js/restosfav.js"></script>
